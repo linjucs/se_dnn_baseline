@@ -64,7 +64,7 @@ __global__ void kernDropout(int n, float p ,float* in, float* rand_vec)
 //}
 
 ////////ReLU
-global void kernSigmoid(int n, float* in_vec, float* out_vec)
+__global__ void kernSigmoid(int n, float* in_vec, float* out_vec)
 {
 int i = (blockIdx.x * blockDim.x) + threadIdx.x;
 if (i < n)
@@ -78,7 +78,7 @@ if (i < n)
 		out_vec[i]=0.0f;
 }
 
-global void kernDsigmoid(int n, float* in_vec, float* out_vec)
+__global__ void kernDsigmoid(int n, float* in_vec, float* out_vec)
 {
 int i = (blockIdx.x * blockDim.x) + threadIdx.x;
 
